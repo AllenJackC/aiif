@@ -1,0 +1,503 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&family=VT323&display=swap');
+:root {
+	--green: #4CFF35;
+	--dark-green: #4AC73A;
+	--light-green: #7CF66C;
+	--bg-green: #30472D;
+	--black: #151D14;
+	--acc-green: #021400;
+	--acc-dark-green: #050e03;
+	--acc-light-green: #373F36;
+	--acc-bg-green: #DAE7DA;
+	--white: #F3F7F3;
+	--font: 'VT323', monospace;
+	--acc-font: 'Atkinson Hyperlegible', sans-serif;
+}
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+/* CRT CSS */
+@keyframes flicker {
+  0% {
+    opacity: 0.27861;
+  }
+  5% {
+    opacity: 0.34769;
+  }
+  10% {
+    opacity: 0.23604;
+  }
+  15% {
+    opacity: 0.90626;
+  }
+  20% {
+    opacity: 0.18128;
+  }
+  25% {
+    opacity: 0.83891;
+  }
+  30% {
+    opacity: 0.65583;
+  }
+  35% {
+    opacity: 0.67807;
+  }
+  40% {
+    opacity: 0.26559;
+  }
+  45% {
+    opacity: 0.84693;
+  }
+  50% {
+    opacity: 0.96019;
+  }
+  55% {
+    opacity: 0.08594;
+  }
+  60% {
+    opacity: 0.20313;
+  }
+  65% {
+    opacity: 0.71988;
+  }
+  70% {
+    opacity: 0.53455;
+  }
+  75% {
+    opacity: 0.37288;
+  }
+  80% {
+    opacity: 0.71428;
+  }
+  85% {
+    opacity: 0.70419;
+  }
+  90% {
+    opacity: 0.7003;
+  }
+  95% {
+    opacity: 0.36108;
+  }
+  100% {
+    opacity: 0.24387;
+  }
+}
+@keyframes textShadow {
+  0% {
+    text-shadow: 0.4389924193300864px 0 1px rgba(0,30,255,0.5), -0.4389924193300864px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  5% {
+    text-shadow: 2.7928974010788217px 0 1px rgba(0,30,255,0.5), -2.7928974010788217px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  10% {
+    text-shadow: 0.02956275843481219px 0 1px rgba(0,30,255,0.5), -0.02956275843481219px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  15% {
+    text-shadow: 0.40218538552878136px 0 1px rgba(0,30,255,0.5), -0.40218538552878136px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  20% {
+    text-shadow: 3.4794037899852017px 0 1px rgba(0,30,255,0.5), -3.4794037899852017px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  25% {
+    text-shadow: 1.6125630401149584px 0 1px rgba(0,30,255,0.5), -1.6125630401149584px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  30% {
+    text-shadow: 0.7015590085143956px 0 1px rgba(0,30,255,0.5), -0.7015590085143956px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  35% {
+    text-shadow: 3.896914047650351px 0 1px rgba(0,30,255,0.5), -3.896914047650351px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  40% {
+    text-shadow: 3.870905614848819px 0 1px rgba(0,30,255,0.5), -3.870905614848819px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  45% {
+    text-shadow: 2.231056963361899px 0 1px rgba(0,30,255,0.5), -2.231056963361899px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  50% {
+    text-shadow: 0.08084290417898504px 0 1px rgba(0,30,255,0.5), -0.08084290417898504px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  55% {
+    text-shadow: 2.3758461067427543px 0 1px rgba(0,30,255,0.5), -2.3758461067427543px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  60% {
+    text-shadow: 2.202193051050636px 0 1px rgba(0,30,255,0.5), -2.202193051050636px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  65% {
+    text-shadow: 2.8638780614874975px 0 1px rgba(0,30,255,0.5), -2.8638780614874975px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  70% {
+    text-shadow: 0.48874025155497314px 0 1px rgba(0,30,255,0.5), -0.48874025155497314px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  75% {
+    text-shadow: 1.8948491305757957px 0 1px rgba(0,30,255,0.5), -1.8948491305757957px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  80% {
+    text-shadow: 0.0833037308038857px 0 1px rgba(0,30,255,0.5), -0.0833037308038857px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  85% {
+    text-shadow: 0.09769827255241735px 0 1px rgba(0,30,255,0.5), -0.09769827255241735px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  90% {
+    text-shadow: 3.443339761481782px 0 1px rgba(0,30,255,0.5), -3.443339761481782px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  95% {
+    text-shadow: 2.1841838852799786px 0 1px rgba(0,30,255,0.5), -2.1841838852799786px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  100% {
+    text-shadow: 2.6208764473832513px 0 1px rgba(0,30,255,0.5), -2.6208764473832513px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+}
+.crt::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(18, 16, 16, 0.1);
+  opacity: 0;
+  z-index: 3;
+  pointer-events: none;
+  animation: flicker 0.15s infinite;
+}
+.crt::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 3;
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: none;
+}
+.crt {
+  animation: textShadow 1.6s infinite;
+  z-index: 3;
+}
+/* Blinking cursor */
+@keyframes blink {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+.crt .cursor {
+animation: blink 1s infinite; 
+}
+/* Button flicker */
+@keyframes flicker {
+  0% {
+    opacity: 0.27861;
+  }
+  5% {
+    opacity: 0.34769;
+  }
+  10% {
+    opacity: 0.23604;
+  }
+  15% {
+    opacity: 0.90626;
+  }
+  20% {
+    opacity: 0.18128;
+  }
+  25% {
+    opacity: 0.83891;
+  }
+  30% {
+    opacity: 0.65583;
+  }
+  35% {
+    opacity: 0.67807;
+  }
+  40% {
+    opacity: 0.26559;
+  }
+  45% {
+    opacity: 0.84693;
+  }
+  50% {
+    opacity: 0.96019;
+  }
+  55% {
+    opacity: 0.08594;
+  }
+  60% {
+    opacity: 0.20313;
+  }
+  65% {
+    opacity: 0.71988;
+  }
+  70% {
+    opacity: 0.53455;
+  }
+  75% {
+    opacity: 0.37288;
+  }
+  80% {
+    opacity: 0.71428;
+  }
+  85% {
+    opacity: 0.70419;
+  }
+  90% {
+    opacity: 0.7003;
+  }
+  95% {
+    opacity: 0.36108;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.flicker {
+	animation: flicker 0.5s;
+	display: block;
+	pointer-events: auto;
+	cursor: pointer;
+}
+@keyframes fade {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+.fade-in {
+	animation: fade 0.5s;
+	display: block;
+	pointer-events: auto;
+	cursor: pointer;
+}
+/* Primary CSS */
+body {
+	color: var(--green);
+	background: var(--black);
+	font-family: var(--font);
+	font-size: 20px;
+	line-height: 1.5em;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	pointer-events: none;
+	text-align: left;
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+	margin: 50px;
+	text-transform: lowercase;
+}
+.hidden {
+	display: none;
+}
+.disabled {
+	pointer-events: none;
+}
+.accessible {
+	color: var(--acc-green);
+	background: var(--white);
+	font-family: var(--acc-font);
+	text-transform: none;
+}
+p {
+	position: relative;
+	padding-left: 1em;
+	overflow: hidden;
+	width: 100%;
+	z-index: 0;
+}
+p:before {
+	content: ">";
+	  position: absolute;
+	  left: 0;
+	  top: 0;
+}
+a {
+	color: var(--light-green);
+	pointer-events: auto;
+}
+a:hover {
+	color: var(--green);
+}
+a:active {
+	color: var(--dark-green);
+}
+.accessible a {
+	color: var(--acc-light-green);
+	pointer-events: auto;
+}
+.accessible a:hover {
+	color: var(--acc-green);
+}
+.accessible a:active {
+	color: var(--acc-dark-green);
+}
+#header {
+	position: fixed;
+	background-color: var(--black);
+	height: 50px;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 2;
+}
+#header a {
+	position: relative;
+	top: 10px;
+	left: 20px;
+}
+.accessible #header {
+	background-color: var(--white);
+}
+.button-container {
+	padding: 20px;
+	row-gap: 10px;
+}
+button {
+	color: 	var(--green);
+	background: none;
+	border: 2px var(--green) solid;
+	font-size: 24px;
+	padding: 5px 10px;
+	font-family: var(--font);
+	display: none;
+}
+button:hover {
+	color: 	var(--light-green);
+	background: var(--bg-green);
+	border-color: var(--light-green);
+}
+button:active, button.active {
+	color: 	var(--black);
+	background: var(--dark-green);
+	border-color: var(--light-green);
+}
+button.submit {
+	text-transform: uppercase;
+}
+.accessible button.submit {
+	text-transform: none;
+}
+button.submit:before {
+	content: ">>";
+}
+button.submit:after {
+	content: "<<";
+}
+button.insufficient {
+	color: 	var(--bg-green);
+	border-color: var(--bg-green);
+	pointer-events: none;
+}
+.accessible button.insufficient {
+	color: 	var(--acc-bg-green);
+	border-color: var(--acc-bg-green);
+	pointer-events: none;
+}
+.accessible button {
+	color: 	var(--acc-green);
+	border-color: var(--acc-green);
+	font-family: var(--acc-font);
+}
+.accessible button:hover {
+	color: 	var(--acc-light-green);
+	background: var(--acc-bg-green);
+	border-color: var(--acc-light-green);
+}
+.accessible button:active, .accessible button.active {
+	color: 	var(--white);
+	background: var(--acc-dark-green);
+	border-color: var(--acc-light-green);
+}
+/* The switch - the box around the slider */
+.switch {
+  position: absolute;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  pointer-events: auto;
+  right: 10px;
+  top: 10px;
+}
+
+/* Hide default HTML checkbox */
+#accessible {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+#accessible-label {
+	position: fixed;
+	display: inline-block;
+	right: 80px;
+	top: 10px;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--bg-green);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+.accessible .slider {
+	background-color: var(--acc-bg-green);
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--green);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.accessible .slider:before {
+	background-color: var(--acc-green);
+}
+
+#accessible:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
