@@ -102,8 +102,22 @@ function nextUp(curEl) {
                                 isGoing = false; //Once loop through buttons is done, animations are done
                             });
                         }
-                        //If it's the last message, show last few links, disable inputs and enable scrolling
-                    } else if (curEl.hasClass('last')) {
+                    //If the next element is a link, show it right away   
+                    } else if (curEl.hasClass('link')) {
+						curEl = $('.hidden:first');
+						//If the page is in accessibility mode, fade the link in
+						if ($('body').hasClass('accessible')) {
+							curEl.removeClass('hidden');
+							curEl.addClass('fade-in');
+							isGoing = false; //Animations are done
+							//If the page is NOT in accessibility mode, flicker the link in
+						} else {
+							curEl.removeClass('hidden');
+							curEl.addClass('flicker');
+							isGoing = false; //Animations are done
+						}					
+					//If it's the last message, show last few messages, disable inputs and enable scrolling
+					} else if (curEl.hasClass('last')) {
                         //If there's a previous section, remove the cursor from that text
                         if (prevSection) prevSection.text(prevSection.text().slice(0, -1));
                         //If the page is in accessibility mode, fade the links in
@@ -115,8 +129,10 @@ function nextUp(curEl) {
                                     linkAnim.addClass('fade-in');
                                 }, 100 * i);
                             }).promise().done(function() {
-                                clearInterval(infiniteScroll);
-                                $('body').css('overflow-y', 'auto'); //Once loop through links is done, enable scrolling
+                                setTimeout(function() {
+									clearInterval(infiniteScroll);
+									$('body').css('overflow-y', 'auto'); //Once loop through links is done, enable scrolling
+								}, 700);
                             });
                             //If the page is NOT in accessibility mode, flicker the links in
                         } else {
@@ -127,8 +143,10 @@ function nextUp(curEl) {
                                     linkAnim.addClass('flicker');
                                 }, 100 * i);
                             }).promise().done(function() {
-                                clearInterval(infiniteScroll);
-                                $('body').css('overflow-y', 'auto'); //Once loop through links is done, enable scrolling
+                                setTimeout(function() {
+									clearInterval(infiniteScroll);
+									$('body').css('overflow-y', 'auto'); //Once loop through links is done, enable scrolling
+								}, 700);
                             });
                         }
                     } else {
@@ -170,7 +188,22 @@ function nextUp(curEl) {
                         isGoing = false; //Animation finished
                         //If current text is part of a collection of multiple paths, disable the other options
                         $('[data-disable*="' + curEl.attr('data-target') + '"]').removeClass('hidden').css('display', 'none');
-                    }
+						//If the next element is a link, show it right away   
+						if (curEl.hasClass('link')) {
+							curEl = $('.hidden:first');
+							//If the page is in accessibility mode, fade the link in
+							if ($('body').hasClass('accessible')) {
+								curEl.removeClass('hidden');
+								curEl.addClass('fade-in');
+								isGoing = false; //Animations are done
+								//If the page is NOT in accessibility mode, flicker the link in
+							} else {
+								curEl.removeClass('hidden');
+								curEl.addClass('flicker');
+								isGoing = false; //Animations are done
+							}			
+						}
+					}
                 });
             }, 5000);
         } else {
