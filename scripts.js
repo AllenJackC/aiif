@@ -115,9 +115,8 @@ function nextUp(curEl) {
                                     linkAnim.addClass('fade-in');
                                 }, 100 * i);
                             }).promise().done(function() {
-                                clearInterval(infiniteScroll).done(function() {
-                                    $('body').css('overflow-y', 'auto'); //Once loop through links is done, enable scrolling
-                                });
+                                clearInterval(infiniteScroll);
+                                $('body').css('overflow-y', 'auto'); //Once loop through links is done, enable scrolling
                             });
                             //If the page is NOT in accessibility mode, flicker the links in
                         } else {
@@ -128,9 +127,8 @@ function nextUp(curEl) {
                                     linkAnim.addClass('flicker');
                                 }, 100 * i);
                             }).promise().done(function() {
-                                clearInterval(infiniteScroll).done(function() {
-                                    $('body').css('overflow-y', 'auto'); //Once loop through links is done, enable scrolling
-                                });
+                                clearInterval(infiniteScroll);
+                                $('body').css('overflow-y', 'auto'); //Once loop through links is done, enable scrolling
                             });
                         }
                     } else {
@@ -210,11 +208,11 @@ $(document).ready(function() {
 
     /* Toggle accessibility mode on load and on click */
     if ($('#accessible').is(':checked')) {
-        $('body').toggleClass('crt');
+		$('body').toggleClass('crt');
         $('body').toggleClass('accessible');
     }
     $('#accessible').click(function() {
-        $('body').toggleClass('crt');
+		$('body').toggleClass('crt');
         $('body').toggleClass('accessible');
     });
 

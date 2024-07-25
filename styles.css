@@ -392,7 +392,7 @@
      display: block;
      position: relative;
      height: 10px;
-     margin: 0.75em 1em 0 1em;
+     margin: 0.75em 0 0 1em;
      width: 100px;
      background-image: linear-gradient(var(--button) 10px, transparent 0), linear-gradient(var(--button) 10px, transparent 0), linear-gradient(var(--button) 10px, transparent 0), linear-gradient(var(--button) 10px, transparent 0);
      background-repeat: no-repeat;
@@ -477,7 +477,7 @@
      background: none;
      border: 2px var(--text) solid;
      font-size: 24px;
-     padding: 5px 10px;
+     padding: 0.25em 0.5em;
      font-family: var(--font);
      display: none;
      text-align: center;
@@ -568,23 +568,13 @@
      -ms-transform: translateX(26px);
      transform: translateX(26px);
 }
-/* Mobile fix */
-@media only screen and (max-width: 768px) {
-  p, a {
-    padding-left: 0;
-	overflow: revert;
-  }
-   p:before, a:before {
-     left: -1em;
-  }
-}
 /* Body */
  .hidden, .optional {
      display: none;
 }
  .button-container {
-     padding: 20px;
-     row-gap: 10px;
+     padding: 1em;
+     row-gap: 0.5em;
      width: fit-content;
 }
 /* Footer */
@@ -613,6 +603,26 @@
      position: relative;
      top: 4px;
      width: 16px;
+}
+/* Mobile fix */
+@media only screen and (max-width: 768px) {
+  p, a {
+    padding-left: 0;
+	overflow: revert;
+  }
+   p:before, a:before {
+     left: -1em;
+  }
+  button {
+	  max-width: 100%;
+  }
+  .button-container {
+	  padding: 1em 0;
+  }
+  .loader{
+     margin: 0.75em 0 0 0;
+     width: 100px;
+  }
 }
 /* Accessibility Mode */
  .accessible {
