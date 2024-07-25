@@ -453,15 +453,6 @@
      left: 0;
      top: 0;
 }
-@media only screen and (max-width: 768px) {
-  p {
-    padding-left: 0;
-	overflow: revert;
-  }
-   p:before {
-     left: -1em;
-  }
-}
  a {
      color: var(--link);
      pointer-events: auto;
@@ -576,6 +567,16 @@
      -webkit-transform: translateX(26px);
      -ms-transform: translateX(26px);
      transform: translateX(26px);
+}
+/* Mobile fix */
+@media only screen and (max-width: 768px) {
+  p, a {
+    padding-left: 0;
+	overflow: revert;
+  }
+   p:before, a:before {
+     left: -1em;
+  }
 }
 /* Body */
  .hidden, .optional {
