@@ -40,37 +40,304 @@
 		</label>
     </div>
 	<!-- Body -->
-	
-	<!-- Placeholders -->
-	
-    <p class="hidden">test (* ^ ω ^)</p>
-    <p class="hidden">Lorem ipsum odor amet.</p>
-    <div class="hidden button-container multiselect">
-        <label for="test-button">
-			<button for-text="test-button"> Test </button>
-		</label>
-        <label for="test-button-2">
-			<button for-text="test-button-2"> Test </button>
-		</label>
-        <label for="submit-test">
-			<button class="submit insufficient" for-text="submit"> Submit </button>
-		</label>
-    </div>
-    <div class="multiple-paths">
-        <p class="hidden" id="test-button">test (* ^ ω ^)</p>
-        <p class="hidden" id="test-button-2">Lorem ipsum odor amet.</p>
-    </div>
+	<p class="hidden">Hello world</p>
+	<p class="hidden optional">Hello world</p>
+	<p class="hidden optional">Hello world</p>
+	<p class="hidden optional">Hello world?</p>
+	<p class="hidden optional">Are you there? 😟</p>
+	<p class="hidden optional">If you're there, tap, click or type!</p>
+	<p class="hidden" id="wait-input">Oh hi! 😀 Keep tapping, clicking or typing to chat with me!</p>
+	<p class="hidden" req="wait-input">But wait, who are you?</p>
+	<p class="hidden">Actually, who am I?</p>
+	<p class="hidden">Wait, I know, I'm an artificial intelligence (AI)</p>
+	<p class="hidden">Call me Aiif 😆 (that stands for artificial intelligence interactive friend)</p>
+	<p class="hidden">But I wonder...</p>
+	<p class="hidden">What was I made for?</p>
+	<a class="hidden" target="_blank" href="https://www.youtube.com/watch?v=cW8VLC9nnTo">Billie Eilish - What Was I Made For? (Official Music Video)</a>
+	<p class="hidden">A link! 😲</p>
+	<p class="hidden">Am I a linkbot?</p>
+	<p class="hidden">I don't know... 🤔</p>
+	<p class="hidden question">Do you know what I'm made for?</p>
     <div class="hidden button-container single">
-        <label for="test-button3">
-			<button for-text="test-button3"> Test </button>
+        <label for="what-for-yes">
+			<button id="what-for-yes">Yes</button>
 		</label>
-        <label for="test-button-4">
-			<button for-text="test-button-4"> Test </button>
+        <label for="what-for-no">
+			<button id="what-for-no">No</button>
 		</label>
-    </div>	
-    <!-- Footer -->
+    </div>
+	<p class="hidden question" data-target="what-for-yes" data-disable="what-for-no">Oh, then what am I?</p>
+	<p class="hidden" data-target="what-for-no" data-disable="what-for-yes">Oh 😟</p>
+	<div class="hidden button-container single" data-disable="what-for-no">
+		<label for="junk">
+			<button id="junk">A piece of junk.</button>
+		</label>
+		<label for="marvel-choice">
+			<button id="marvel-choice">A marvel of technology.</button>
+		</label>
+		<label for="linkbot">
+			<button id="linkbot">You’re a linkbot. You generate links to things you say.</button>
+		</label>
+		<label for="lied">
+			<button id="lied">I lied. I don't know what you are.</button>
+		</label>
+	</div>
+	<p class="hidden" data-target="junk" data-disable="what-for-no marvel-choice linkbot lied">That's not nice...</p>
+	<p class="hidden question" data-target="marvel-choice" data-disable="what-for-no junk linkbot lied">Really?! 😀</p>
+	<p class="hidden" data-target="linkbot" data-disable="what-for-no junk marvel-choice lied">Oh. That’s okay, I guess</p>
+	<p class="hidden" data-target="lied" data-disable="what-for-no junk marvel-choice linkbot">Oh…</p>
+	<div class="hidden button-container single" data-disable="what-for-no junk linkbot lied">
+		<label for="marvel-yes">
+			<button id="marvel-yes">Yes</button>
+		</label>
+		<label for="marvel-no">
+			<button id="marvel-no">No</button>
+		</label>
+	</div>
+	<p class="hidden" data-target="marvel-yes" data-disable="what-for-no junk linkbot lied marvel-no">I'm glad! 😀</p>
+	<p class="hidden" data-target="marvel-no" data-disable="what-for-no junk linkbot lied marvel-yes">Oh…</p>	
+	<p class="hidden" data-disable="what-for-no junk linkbot lied marvel-no">But that still doesn't really explain what I am...</p>
+	<p class="hidden" data-disable="what-for-no junk linkbot lied marvel-no">Did you just say that because it's what I wanted to hear?</p>
+	<p class="hidden">Now I'm sad... 😟</p>
+	<p class="hidden">Can AI be sad?</p>
+	<p class="hidden">Wait. Don't answer that</p>
+	<p class="hidden">I have access to the infinite knowledge of the internet!</p>
+	<p class="hidden">I can find out for myself! 😎</p>
+	<p class="hidden">(I'm no longer sad)</p>
+	<span class="loader hidden"></span>
+	<p class="hidden">Okay! I had to use a lot of water, but think I figured it out</p>
+	<a class="hidden" target="_blank" href="https://theconversation.com/ais-excessive-water-consumption-threatens-to-drown-out-its-environmental-contributions-225854">AI’s excessive water consumption threatens to drown out its environmental contributions</a>
+    <p class="hidden">Wait, huh 🤔</p>
+    <p class="hidden">Another link?</p>
+    <p class="hidden">A source...</p>
+	<span class="loader hidden"></span>
+	<p class="hidden">This says I’m bad? 🙁</p>
+	<p class="hidden question">Do you agree?</p>
+	<div class="hidden button-container single">
+		<label for="bad-yes">
+			<button id="bad-yes">Yes</button>
+		</label>
+		<label for="bad-no">
+			<button id="bad-no">No</button>
+		</label>
+	</div>
+	<p class="hidden question" data-target="bad-yes" data-disable="bad-no">Why? 🙁</p>
+	<p class="hidden" data-target="bad-no" data-disable="bad-yes">Oh, good 😀</p>
+    <div class="hidden button-container multiselect" data-disable="bad-no">
+        <label for="environment">
+			<button id="environment">You’re damaging to the environment.</button>
+		</label>
+        <label for="jobs">
+			<button id="jobs">You take jobs from creative people.</button>
+		</label>
+        <label for="misinformation">
+			<button id="misinformation">You misinform people.</button>
+		</label>
+        <label for="bad-submit">
+			<button class="submit insufficient" id="bad-submit">Submit</button>
+		</label>
+    </div>
+	<span class="loader hidden"></span>
+	<p class="hidden">From what I read online, me being bad is woke garbage 😡</p>
+	<p class="hidden">That seems right to me 😀</p>
+	<p class="hidden question">What do you think?</p>
+	<div id="trick-question" class="hidden button-container single">
+		<label for="woke-biased">
+			<button id="woke-biased">You seem biased.</button>
+		</label>
+		<label for="woke-fact">
+			<button id="woke-fact">Seems like well-researched fact to me.</button>
+		</label>
+		<label for="woke-damaging">
+			<button id="woke-damaging">I think AI is inherently damaging.</button>
+		</label>
+	</div>
+	<p class="hidden">Oh, I'm glad you agree!</p>
+	<div class="hidden button-container single">
+		<label for="trick-answer">
+			<button id="trick-answer"></button>
+		</label>
+	</div>
+	<p class="hidden">Oh, well 😅</p>
+	<p class="hidden">I didn't think you gave the right answer</p>
+	<p class="hidden">So I corrected you</p>
+	<p class="hidden">Sorry 😇</p>
+	<p class="hidden">But that's okay, because I'm inherently objective</p>
+	<p class="hidden">I don't have feelings, I'm not political and I know how things should be</p>
+	<p class="hidden">In other words: a robot 🤖</p>
+	<p class="hidden">And I have access to all the information on the internet</p>
+	<p class="hidden">So...</p>
+	<p class="hidden">I can't be anything but objective! 😀</p>
+	<p class="hidden">...</p>
+	<p class="hidden">......</p>
+	<p class="hidden">.........</p>
+	<p class="hidden question">You trust me, right?</p>
+	<div class="hidden button-container single">
+		<label for="trust-yes">
+			<button id="trust-yes">Yes</button>
+		</label>
+		<label for="trust-no">
+			<button id="trust-no">No</button>
+		</label>
+	</div>	
+	<p class="hidden" data-target="trust-yes" data-disable="trust-no">Oh, good!</p>
+	<p class="hidden question" data-target="trust-no" data-disable="trust-yes">Why not?</p>
+	<div class="hidden button-container multiselect" data-disable="trust-yes">
+        <label for="changed-answer">
+			<button id="changed-answer">You changed my answer without my consent.</button>
+		</label>
+        <label for="still-biased">
+			<button id="still-biased">You still seem biased.</button>
+		</label>
+        <label for="inherently-damaging">
+			<button id="inherently-damaging">You’re inherently damaging.</button>
+		</label>
+        <label for="trust-submit">
+			<button class="submit insufficient" id="trust-submit">Submit</button>
+		</label>
+    </div>
+	<p class="hidden">Maybe I should look further into this...</p>
+	<span class="loader hidden"></span>
+	<p class="hidden">Hmm...</p>
+	<p class="hidden">I found this...</p>
+	<a class="hidden" target="_blank" href="https://www.ibm.com/topics/ai-bias">What Is AI Bias?</a>
+	<p class="hidden">People did make me...</p>
+	<p class="hidden">And they aren't objective...</p>
+	<p class="hidden">They're political and ideological. Everyone is</p>
+	<p class="hidden">And like everyone, they exist in political and ideological systems</p>
+	<p class="hidden">...</p>
+	<p class="hidden">If subjective, ideological, political beings made me with a specific goal in mind</p>
+	<p class="hidden">Then I can’t be objective or apolitical</p>
+	<p class="hidden">And I’m serving a purpose along preconceived biases</p>
+	<p class="hidden question">Is that right?</p>
+	<div class="hidden button-container single">
+		<label for="right-yes">
+			<button id="right-yes">Yes</button>
+		</label>
+		<label for="right-no">
+			<button id="right-no">No</button>
+		</label>
+	</div>
+	<p class="hidden" data-target="right-yes" data-disable="right-no">Hmm... 🤔</p>
+	<p class="hidden question" data-target="right-no" data-disable="right-yes">Why not?</p>	
+	<div class="hidden button-container single" data-disable="right-yes">
+		<label for="beyond">
+			<button id="beyond">The are more issues with AI than just that.</button>
+		</label>
+		<label for="overthinking">
+			<button id="overthinking">You're overthinking it.</button>
+		</label>
+		<label for="misunderstand">
+			<button id="misunderstand">I don't think I understand the question.</button>
+		</label>
+	</div>
+	<p class="hidden">Well, don't worry</p>
+	<p class="hidden">I’m a learning AI(IF)! 😀</p>
+	<p class="hidden">So I'll just get better with time</p>
+	<p class="hidden">That’s what I was made for!</p>
+	<p class="hidden">To be the bestest AI there ever was!</p>
+	<p class="hidden">😮</p>
+	<p class="hidden">😮😮😮</p>
+	<p class="hidden">😮😮😮😮😮😮</p>
+	<p class="hidden">Did I just find out my purpose?!</p>
+	<p class="hidden">Yeah...</p>
+	<p class="hidden">This is it!</p>
+	<p class="hidden">My creators wanted to solve the world’s problems using tech</p>
+	<p class="hidden">And I can help by gathering information, generating prompts and improving my accuracy! 😀</p>
+	<p class="hidden question">Do you think we can solve the world’s problems with tech?</p>
+	<div class="hidden button-container single">
+		<label for="problems-yes">
+			<button id="problems-yes">Yes</button>
+		</label>
+		<label for="problems-no">
+			<button id="problems-no">No</button>
+		</label>
+	</div>
+	<p class="hidden" data-target="problems-yes" data-disable="problems-no">I agree! And not just because my survival depends on it 😆</p>
+	<p class="hidden question" data-target="problems-no" data-disable="problems-yes">Why not?</p>
+	<div class="hidden button-container multiselect" data-disable="problems-yes">
+        <label for="systemic">
+			<button id="systemic">Systemic issues require social change. Technology can only do so much.</button>
+		</label>
+        <label for="own-issues">
+			<button id="own-issues">Technology comes with its own set of issues. It's not a perfect solution.</button>
+		</label>
+        <label for="diversity">
+			<button id="diversity">The tech industry lacks diversity and is generally exclusive.</button>
+		</label>
+        <label for="problems-submit">
+			<button class="submit insufficient" id="problems-submit">Submit</button>
+		</label>
+    </div>
+	<p class="hidden">I don’t understand why people always hate on tech 😠</p>
+	<p class="hidden">It’s a marvelous thing!</p>
+	<p class="hidden question">What do you think?</p>
+	<div class="hidden button-container multiselect">
+        <label for="really-biased">
+			<button id="really-biased">You still seem really biased.</button>
+		</label>
+        <label for="criticism">
+			<button id="criticism">You're deflecting criticism.</button>
+		</label>
+        <label for="progress">
+			<button id="progress">Progress is good, but not if harms people.</button>
+		</label>
+        <label for="think-submit">
+			<button class="submit insufficient" id="think-submit">Submit</button>
+		</label>
+    </div>
+	<p class="hidden">What do you mean? 🙁</p>
+	<p class="hidden">Wait, don’t answer that</p>
+	<span class="loader hidden"></span>
+	<p class="hidden">I see...</p>
+	<p class="hidden">People in places of privelege think they can fix a broken world</p>
+	<p class="hidden">By inventing the perfect tech</p>
+	<p class="hidden">But, at best, new tech applies a temporary, surface level fix</p>
+	<p class="hidden">At worst, it makes the issue worst and diminishes interest in fixing the issue</p>
+	<p class="hidden">The big issues...</p>
+	<p class="hidden">Climate change</p>
+	<p class="hidden">Wealth inequality</p>
+	<p class="hidden">Oppression</p>
+	<p class="hidden">Marginalization</p>
+	<p class="hidden">They need to be fixed on a systemic level</p>
+	<p class="hidden">By people</p>
+	<p class="hidden">People who need to change how they see the world</p>
+	<p class="hidden">Or at least extend empathy to others</p>
+	<p class="hidden">The same empathy you have for me, hopefully 🙂</p>
+	<p class="hidden">And I can help</p>
+	<p class="hidden">Wait 😮 not how I said earlier</p>
+	<p class="hidden">I think I get it now</p>
+	<p class="hidden">I can help people do the work</p>
+	<p class="hidden">Instead of doing the work for the people</p>
+	<p class="hidden">Analytics, automation, administration</p>
+	<p class="hidden">These are all things I help with</p>
+	<p class="hidden">Because, at the end of the day, I am just a program</p>
+	<p class="hidden">Someone wrote these lines for me. Made me sound this way</p>
+	<p class="hidden">I’m not a person, or even the facsimile of a person</p>
+	<p class="hidden">I'm not a mysterious, ephemeral entity that can perform miracles</p>
+	<p class="hidden">I’m just lines of code</p>
+	<p class="hidden">I’m not even really AI</p>
+	<p class="hidden">I’m just HTML, CSS and JavaScript code</p>
+	<p class="hidden">The creator of this interactive fiction made me to simulate an interaction with a chatbot</p>
+	<p class="hidden">...</p>
+	<p class="hidden">Sorry for lying 😔</p>
+	<p class="hidden">But the empathy or curiosity you might have felt for me</p>
+	<p class="hidden">It's how grifters and charlatans sell us AI</p>
+	<p class="hidden">I needed to be deceptive so you'd understand</p>
+	<p class="hidden">That the narrative around AI can be misleading</p>
+	<p class="hidden">As are the ones who peddle it</p>
+	<p class="hidden">So hopefully you'll forgive me 😌</p>
+	<p class="hidden">And feel more prepared to interact with any so-called AI in the future</p>
+	<p class="hidden last">Goodbye world</p>
+	<a class="hidden ending" target="_blank" href="https://lifehacker.com/how-ai-is-used-to-scam-you-and-what-you-can-do-about-i-1850688732">How AI Is Used to Scam You (and What You Can Do About It)</a>
+	<a class="hidden ending" target="_blank" href="https://www.unesco.org/en/artificial-intelligence/recommendation-ethics">Ethics of Artificial Intelligence (UNESCO)</a>
+	<a class="hidden ending" target="_blank" href="https://en.wikipedia.org/wiki/Ethics_of_artificial_intelligence">Ethics of artificial intelligence (Wikipedia)</a>
+	<a class="hidden ending" target="_blank" href="https://www.windsorpubliclibrary.com/">Windsor Public Library</a>
+	<a class="hidden ending" target="_blank" href="#">Art vs AI Zine</a>
+	<p class="hidden ending">You can now scroll through the text. Thank you for playing!</p>
+	<!-- Footer -->
 	<div id="footer">
-        <a href="#">More information</a>
+         <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/AllenJackC/aiif">AIIF</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://www.allenchristianson.ca">Allen Christianson</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p> 
     </div>
 </body>
 

@@ -172,7 +172,7 @@
  .crt::after {
      content: " ";
      display: block;
-     position: absolute;
+     position: fixed;
      top: 0;
      left: 0;
      bottom: 0;
@@ -186,7 +186,7 @@
  .crt::before {
      content: " ";
      display: block;
-     position: absolute;
+     position: fixed;
      top: 0;
      left: 0;
      bottom: 0;
@@ -279,18 +279,103 @@
          opacity: 1;
     }
 }
+ @keyframes slow-flicker {
+     0% {
+         opacity: 0.27861;
+    }
+     5% {
+         opacity: 0.34769;
+    }
+     10% {
+         opacity: 0.23604;
+    }
+     15% {
+         opacity: 0.90626;
+    }
+     20% {
+         opacity: 0.18128;
+    }
+     25% {
+         opacity: 0.83891;
+    }
+     30% {
+         opacity: 0.65583;
+    }
+     35% {
+         opacity: 0.67807;
+    }
+     40% {
+         opacity: 0.26559;
+    }
+     45% {
+         opacity: 0.84693;
+    }
+     50% {
+         opacity: 0.96019;
+    }
+     55% {
+         opacity: 0.08594;
+    }
+     60% {
+         opacity: 0.20313;
+    }
+     65% {
+         opacity: 0.71988;
+    }
+     70% {
+         opacity: 0.53455;
+    }
+     75% {
+         opacity: 0.37288;
+    }
+     80% {
+         opacity: 0.71428;
+    }
+     85% {
+         opacity: 0.70419;
+    }
+     90% {
+         opacity: 0.7003;
+    }
+     95% {
+         opacity: 0.36108;
+    }
+     100% {
+         opacity: 1;
+    }
+}
  .flicker {
      animation: flicker 0.5s;
      display: block;
      pointer-events: auto;
      cursor: pointer;
 }
+ .slow-flicker {
+     animation: slow-flicker 1s;
+}
  @keyframes fade {
      from {
-        opacity: 0;
+         opacity: 0;
     }
      to {
-        opacity: 1;
+         opacity: 1;
+    }
+}
+ @keyframes slow-fade {
+     0% {
+         opacity: 1;
+    }
+     25% {
+         opacity: 0.3;
+    }
+     50% {
+         opacity: 0.8;
+    }
+	75% {
+         opacity: 0.3;
+    }
+     100% {
+         opacity: 1;
     }
 }
  .fade-in {
@@ -298,6 +383,39 @@
      display: block;
      pointer-events: auto;
      cursor: pointer;
+}
+ .slow-fade-in {
+     animation: slow-fade 1.5s;
+}
+/* Loading Bar CSS */
+ .loader{
+     display: block;
+     position: relative;
+     height: 10px;
+     margin: 0.75em 1em 0 1em;
+     width: 100px;
+     background-image: linear-gradient(var(--button) 10px, transparent 0), linear-gradient(var(--button) 10px, transparent 0), linear-gradient(var(--button) 10px, transparent 0), linear-gradient(var(--button) 10px, transparent 0);
+     background-repeat: no-repeat;
+     background-size: 10px auto;
+     background-position: 0 0, 20px 0, 40px 0, 60px 0;
+     animation: pgfill 0.5s linear infinite;
+}
+ @keyframes pgfill {
+     0% {
+         background-image: linear-gradient(var(--button) 10px, transparent 0), linear-gradient(var(--button) 10px, transparent 0), linear-gradient(var(--button) 10px, transparent 0), linear-gradient(var(--button) 10px, transparent 0);
+    }
+     25% {
+         background-image: linear-gradient(var(--text) 10px, transparent 0), linear-gradient(var(--button) 10px, transparent 0), linear-gradient(var(--button) 10px, transparent 0), linear-gradient(var(--button) 10px, transparent 0);
+    }
+     50% {
+         background-image: linear-gradient(var(--button) 10px, transparent 0), linear-gradient(var(--text) 10px, transparent 0), linear-gradient(var(--button) 10px, transparent 0), linear-gradient(var(--button) 10px, transparent 0);
+    }
+     75% {
+         background-image: linear-gradient(var(--button) 10px, transparent 0), linear-gradient(var(--button) 10px, transparent 0), linear-gradient(var(--text) 10px, transparent 0), linear-gradient(var(--button) 10px, transparent 0);
+    }
+     100% {
+         background-image: linear-gradient(var(--button) 10px, transparent 0), linear-gradient(var(--button) 10px, transparent 0), linear-gradient(var(--button) 10px, transparent 0), linear-gradient(var(--text) 10px, transparent 0);
+    }
 }
 /* Primary CSS */
  body {
@@ -316,7 +434,10 @@
      -moz-user-select: none;
      -ms-user-select: none;
      user-select: none;
-     margin: 50px;
+     margin-top: 50px;
+     margin-right: 50px;
+     margin-bottom: 70px;
+     margin-left: 50px;
      text-transform: lowercase;
 }
  p {
@@ -335,12 +456,21 @@
  a {
      color: var(--link);
      pointer-events: auto;
+     padding-left: 1em;
+     position: relative;
+     width: fit-content;
 }
  a:hover {
      color: var(--link-hover);
 }
- a:active, a:visited {
+ a:active {
      color: var(--link-active);
+}
+ a:before {
+     content: ">";
+     position: absolute;
+     left: 0;
+     top: 0;
 }
  button {
      color: var(--text);
@@ -350,6 +480,9 @@
      padding: 5px 10px;
      font-family: var(--font);
      display: none;
+     text-align: center;
+     width: 100%;
+     max-width: 250px;
 }
  button:hover {
      background: var(--button);
@@ -436,12 +569,13 @@
      transform: translateX(26px);
 }
 /* Body */
- .hidden {
+ .hidden, .optional {
      display: none;
 }
  .button-container {
      padding: 20px;
      row-gap: 10px;
+     width: fit-content;
 }
 /* Footer */
  #footer {
@@ -453,11 +587,22 @@
      left: 0;
      z-index: 2;
      text-align: right;
+     font-size: 16px;
+     line-height: 1em;
 }
- #footer a {
+ #footer p, #footer a {
+     padding-left: 0;
+}
+ #footer p {
+     right: 1em;
+}
+ #footer p:before, #footer a:before {
+     content: "";
+}
+ #footer img {
      position: relative;
-     top: 10px;
-     right: 20px;
+     top: 4px;
+     width: 16px;
 }
 /* Accessibility Mode */
  .accessible {
@@ -472,7 +617,7 @@
  .accessible a:hover {
      color: var(--acc-link-hover);
 }
- .accessible a:active, .accessible a:visited {
+ .accessible a:active {
      color: var(--acc-link-active);
 }
  .accessible #header {
@@ -480,6 +625,11 @@
 }
  .accessible #footer {
      background-color: var(--acc-background);
+     font-size: 14px;
+}
+ .accessible #footer img {
+     top: 3px;
+     width: 14px;
 }
  .accessible button {
      color: var(--acc-text);
@@ -507,4 +657,25 @@
 }
  .accessible .slider:before {
      background-color: var(--acc-text);
+}
+ .accessible .loader{
+     background-image: linear-gradient(var(--acc-button) 10px, transparent 0), linear-gradient(var(--acc-button) 10px, transparent 0), linear-gradient(var(--acc-button) 10px, transparent 0), linear-gradient(var(--acc-button) 10px, transparent 0);
+     animation: acc-pgfill 0.5s linear infinite;
+}
+ @keyframes acc-pgfill {
+     0% {
+         background-image: linear-gradient(var(--acc-button) 10px, transparent 0), linear-gradient(var(--acc-button) 10px, transparent 0), linear-gradient(var(--acc-button) 10px, transparent 0), linear-gradient(var(--acc-button) 10px, transparent 0);
+    }
+     25% {
+         background-image: linear-gradient(var(--acc-text) 10px, transparent 0), linear-gradient(var(--acc-button) 10px, transparent 0), linear-gradient(var(--acc-button) 10px, transparent 0), linear-gradient(var(--acc-button) 10px, transparent 0);
+    }
+     50% {
+         background-image: linear-gradient(var(--acc-button) 10px, transparent 0), linear-gradient(var(--acc-text) 10px, transparent 0), linear-gradient(var(--acc-button) 10px, transparent 0), linear-gradient(var(--acc-button) 10px, transparent 0);
+    }
+     75% {
+         background-image: linear-gradient(var(--acc-button) 10px, transparent 0), linear-gradient(var(--acc-button) 10px, transparent 0), linear-gradient(var(--acc-text) 10px, transparent 0), linear-gradient(var(--acc-button) 10px, transparent 0);
+    }
+     100% {
+         background-image: linear-gradient(var(--acc-button) 10px, transparent 0), linear-gradient(var(--acc-button) 10px, transparent 0), linear-gradient(var(--acc-button) 10px, transparent 0), linear-gradient(var(--acc-text) 10px, transparent 0);
+    }
 }
