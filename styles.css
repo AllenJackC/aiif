@@ -347,8 +347,6 @@
  .flicker {
      animation: flicker 0.5s;
      display: block;
-     pointer-events: auto;
-     cursor: pointer;
 }
  .slow-flicker {
      animation: slow-flicker 1s;
@@ -381,8 +379,6 @@
  .fade-in {
      animation: fade 0.5s;
      display: block;
-     pointer-events: auto;
-     cursor: pointer;
 }
  .slow-fade-in {
      animation: slow-fade 1.5s;
@@ -483,6 +479,7 @@
      text-align: center;
      width: 100%;
      max-width: 250px;
+	 cursor: pointer;
 }
  button:hover {
      background: var(--button);
@@ -524,8 +521,8 @@
      left: -215px;
      cursor: pointer;
 }
- .accessible #accessible-label {
-     left: -240px;
+ #accessible {
+     cursor: pointer;
 }
  .switch {
      position: absolute;
@@ -535,6 +532,7 @@
      pointer-events: auto;
      right: 10px;
      top: 10px;
+	 cursor: pointer;
 }
  #accessible {
      opacity: 0;
@@ -642,6 +640,9 @@
 }
  .accessible #header {
      background-color: var(--acc-background);
+}
+ .accessible #accessible-label {
+     left: -240px;
 }
  .accessible #footer {
      background-color: var(--acc-background);

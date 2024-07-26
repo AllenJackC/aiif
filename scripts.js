@@ -28,24 +28,14 @@ function scrollToBottom() {
 /* Turn event listeners for the page on and off */
 function toggleInput() {
     if (!awaitingButtons) {
-        $(window).on('keypress', function() {
+        $(window).on('keypress click tap touchstart', function(e) {
             if (awaitingInitialInput) {
                 $('.optional').removeClass('hidden');
                 nextUp($('#wait-input'));
                 awaitingInitialInput = false;
                 clearInterval(initialScrawl);
             } else {
-                nextUp($('.hidden:first'));
-            }
-        });
-        $(window).click(function(e) {
-            if (awaitingInitialInput) {
-                $('.optional').removeClass('hidden');
-                nextUp($('#wait-input'));
-                awaitingInitialInput = false;
-                clearInterval(initialScrawl);
-            } else {
-                if (!$(e.target).hasClass('slider') && $(e.target).attr('id') != 'accessible' && $(e.target).attr('id') != 'accessible-label' && !$(e.target).is('a')) nextUp($('.hidden:first'));
+                 if (!$(e.target).hasClass('slider') && $(e.target).attr('id') != 'accessible' && $(e.target).attr('id') != 'accessible-label' && !$(e.target).is('a')) nextUp($('.hidden:first'));
             }
         });
     } else {
@@ -146,6 +136,8 @@ function nextUp(curEl) {
                                 setTimeout(function() {
 									clearInterval(infiniteScroll);
 									$('body').css('overflow-y', 'auto'); //Once loop through links is done, enable scrolling
+									awaitingButtons = true; //Disable click event listeners
+									toggleInput(); //Disable click event listeners
 								}, 700);
                             });
                         }
@@ -244,13 +236,13 @@ $(document).ready(function() {
 		$('body').toggleClass('crt');
         $('body').toggleClass('accessible');
     }
-    $('#accessible').click(function() {
+    $('#accessible').on('click', function() {
 		$('body').toggleClass('crt');
         $('body').toggleClass('accessible');
     });
 
     /* If a button is clicked, change it's style, advance relevant text and disable unused text */
-    $('button').click(function() {
+    $('button').on('click', function() {
         var buttonContainer = $(this).closest('.button-container'); //Identify button container
         //If only one option is available, remove the active class from all other buttons
         if (buttonContainer.hasClass('multiselect') == false) buttonContainer.find('button').removeClass('active');
@@ -265,7 +257,7 @@ $(document).ready(function() {
     });
 
     /* If a single selection button is clicked, show associated text */
-    $('.single button').click(function() {
+    $('.single button').on('click', function() {
         var textID = $(this).attr('id'); //Get the stored association in the button
         nextUp($('[data-target="' + textID + '"]')); //Target the associated text
         $(this).closest('.button-container').find('button').addClass('disabled'); //Disable interactions with all buttons on the same level
@@ -274,7 +266,7 @@ $(document).ready(function() {
     });
 
     /* If a submit button is pressed, advance the text */
-    $('.submit').click(function() {
+    $('.submit').on('click', function() {
         nextUp($('.hidden:first')); //Advance the text
         $(this).closest('.button-container').find('button').addClass('disabled'); //Disable interactions with all buttons on the same level
         awaitingButtons = false; //No longer waiting for button inputs
@@ -282,7 +274,7 @@ $(document).ready(function() {
     });
 
     /* Special button behaviour for trick question */
-    $('#trick-question button').click(function() {
+    $('#trick-question button').on('click', function() {
         $('#trick-answer').text('Wait! I didn’t say that, I said "' + $(this).text() + '"');
 		if ($('body').hasClass('accessible')) {
 			$(this).addClass('slow-fade-in').text('You’re right, that is woke garbage.');
