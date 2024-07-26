@@ -455,6 +455,7 @@
      padding-left: 1em;
      position: relative;
      width: fit-content;
+	 cursor: pointer;
 }
  a:hover {
      color: var(--link-hover);
@@ -480,6 +481,7 @@
      width: 100%;
      max-width: 250px;
 	 cursor: pointer;
+	 pointer-events: auto;
 }
  button:hover {
      background: var(--button);
