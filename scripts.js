@@ -39,8 +39,7 @@ function toggleInput() {
             }
         });
     } else {
-        $(window).unbind('keypress');
-        $(window).unbind('click');
+        $(window).unbind('keypress click tap touchstart');
     }
 }
 
